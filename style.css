@@ -1,4 +1,8 @@
 /* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -9,17 +13,17 @@ body {
 .top-text {
   background-color: black;
   color: white;
-  padding: 20px;
+  padding: 1rem;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.8rem;
 }
 
 .door-container {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: calc(100vh - 70px); /* subtract header height */
   background-color: #222;
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -29,7 +33,7 @@ body {
   top: 0;
   width: 50%;
   height: 100%;
-  background: #d3d3d3; /* white-gray */
+  background: #d3d3d3;
   transition: transform 2s ease-in-out;
   z-index: 2;
 }
@@ -63,25 +67,48 @@ body {
   left: 30px;
 }
 
-/* Video wrapper to control mobile view */
+/* Responsive Video Wrapper */
 .video-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 90%;
-  max-height: 60%;
-  width: 100%;
-  height: auto;
+  width: 90vw;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
   display: none;
   z-index: 1;
 }
 
-/* Responsive video */
 video {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+  .top-text {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
+
+  .doorknob {
+    width: 20px;
+    height: 20px;
+  }
+
+  .left-door .doorknob {
+    right: 20px;
+  }
+
+  .right-door .doorknob {
+    left: 20px;
+  }
+
+  .video-wrapper {
+    width: 95vw;
+  }
 }
