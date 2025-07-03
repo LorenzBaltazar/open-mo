@@ -3,6 +3,8 @@ function openDoor() {
   document.querySelector('.left-door').style.transform = 'translateX(-100%)';
   document.querySelector('.right-door').style.transform = 'translateX(100%)';
 
+   document.querySelector('.top-text').textContent = "Araaaayyy Koooo!";
+
   // Show video and play
   const video = document.getElementById('secretVideo');
   const wrapper = document.getElementById('videoWrapper');
