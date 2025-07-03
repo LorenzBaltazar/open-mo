@@ -1,15 +1,14 @@
 function openDoor() {
-  // Open the doors
+  // Animate doors
   document.querySelector('.left-door').style.transform = 'translateX(-100%)';
   document.querySelector('.right-door').style.transform = 'translateX(100%)';
 
-  // Get the video
+  // Show video wrapper and play
   const video = document.getElementById('secretVideo');
+  const wrapper = document.getElementById('videoWrapper');
 
-  // Show the video
-  video.style.display = 'block';
+  wrapper.style.display = 'block';
 
-  // Manually play the video
   video.play().catch(err => {
     console.error('Video play failed:', err);
   });

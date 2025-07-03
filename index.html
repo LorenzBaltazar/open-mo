@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Open Mo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,11 +16,14 @@
     <div class="door right-door">
       <div class="doorknob"></div>
     </div>
-    
-    <video id="secretVideo" loop>
-      <source src="kape.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+
+    <!-- Wrapped video for better control -->
+    <div class="video-wrapper" id="videoWrapper">
+      <video id="secretVideo" loop playsinline>
+        <source src="kape.mp4" type="video/mp4">
+
+      </video>
+    </div>
   </div>
 
   <script src="script.js"></script>
