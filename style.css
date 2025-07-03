@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.top-text {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.door-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #222;
+  cursor: pointer;
+}
+
+.door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #d3d3d3; /* light gray / white-gray */
+  transition: transform 2s ease-in-out;
+  z-index: 2;
+}
+
+.left-door {
+  left: 0;
+  border-right: 2px solid #999;
+}
+
+.right-door {
+  right: 0;
+  border-left: 2px solid #999;
+}
+
+.doorknob {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #555;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-door .doorknob {
+  right: 30px;
+}
+
+.right-door .doorknob {
+  left: 30px;
+}
+
+video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  display: none;
+}
